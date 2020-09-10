@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font-family: Helvetica;
+  color: white;
+}
+
+h1 {
+  color: white;
+  font-size: 40px;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+header {
+  height: 150px;
+  background-color: #16A4B8;
+  border-bottom: 10px solid #387B85;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3% 10%;
+}
+
+.profile-pic img {
+  height: 150px;
+  width: 150px;
+  border: 10px solid #387B85;
+  border-radius: 50%;
+}
+
+.section1 {
+  background-color: #05EB87;
+  height: 850px;
+  padding: 3% 10%;
+}
+
+/*# sourceMappingURL=styles.css.map */
