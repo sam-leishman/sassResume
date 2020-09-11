@@ -42,8 +42,9 @@ body {
 }
 
 .background {
-    // @include transform(rotate(-40deg));
+    @include transform(rotate(180deg));
     @extend %flex-column;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -52,17 +53,17 @@ body {
     .background1 {
         height: 600px;
         width: 100vw;
-        background-color: colors.$master-l-10;
+        background-color: colors.$master-5;
 
         .background2 {
             height: 300px;
             width: 100vw;
-            background-color: colors.$master-d-10;
+            background-color: colors.$master-10;
 
             .background3 {
                 height: 100px;
                 width: 100vw;
-                background-color: colors.$master-d-15;
+                background-color: colors.$master-15;
             }
         }
     }
@@ -90,6 +91,12 @@ header {
     .my-name h1 {
         font-size: 50px;
         color: colors.$primary-color;
+    }
+
+    .current-position {
+        color: colors.$primary-color;
+        opacity: 0.5;
+        font-size: 25px;
     }
 }
 
