@@ -5,6 +5,28 @@
     -ms-transform: $property;
     transform: $property;
 }
+@mixin box-shadow($property) {
+    -webkit-box-shadow: $property;
+    -moz-box-shadow: $property;
+    box-shadow: $property;
+    
+}
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
 
 $header-height: 200px;
 $page-width: 850px;
@@ -12,55 +34,78 @@ $section-padding: 3% 10%;
 $font-stack: Helvetica, arial, sans-serif;
 
 body {
-    margin: 0;
+    margin: 100px 0;
     font-family: $font-stack;
-    color: white;
+    color: black;
+    background-color: colors.$master-grey;
+    position: relative;
 }
 
 .background {
     // @include transform(rotate(-40deg));
-    z-index: -1000;
-    background-color: colors.$master-gray;
+    @extend %flex-column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
 
     .background1 {
-        height: 300px;
+        height: 600px;
+        width: 100vw;
+        background-color: colors.$master-l-10;
+
+        .background2 {
+            height: 300px;
+            width: 100vw;
+            background-color: colors.$master-d-10;
+
+            .background3 {
+                height: 100px;
+                width: 100vw;
+                background-color: colors.$master-d-15;
+            }
+        }
     }
+}
+
+.page {
+    @include box-shadow(0px 0px 15px);
+    max-width: $page-width;
+    margin: 0 auto;
+    position: relative;
+    z-index: 100;
 }
 
 header {
     max-height: $header-height;
-    background-color: colors.$accent-color;
-    border-bottom: 10px solid #005A9E;
-    max-width: $page-width;
-    margin: 0 auto;
+    background-color: colors.$main-color;
+    border-bottom: 10px solid colors.$primary-color;
 
     .header {
         padding: $section-padding;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @extend %flex-row;
         margin: 0;
     }
 
     .my-name h1 {
         font-size: 50px;
+        color: colors.$primary-color;
     }
 }
 
 main {
-    max-width: $page-width;
-    margin: 0 auto;
+    color: white;
 
     h1 {
         color: white;
         font-size: 40px;
-        -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+        -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: colors.$primary-color;
     }
 }
 
 .section1 {
-    background-color: colors.$primary-color;
+    background-color: colors.$main-color;
     height: 1000px - $header-height;
     padding: $section-padding;
 }

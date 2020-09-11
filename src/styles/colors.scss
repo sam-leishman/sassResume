@@ -1,11 +1,14 @@
 // =========================
 // colors
 // =========================
-$accent-color: #2897EB;
+$main-color: white;
 $primary-color: #EB9F29;
 
 // grays
-$master-gray: #F0F0F0;
-$master-l-10: mix(white, $master-gray, 10%);
-$master-d-10: mix(black, $master-gray, 10%);
-$master-d-15: mix(black, $master-gray, 15%);
+$master-grey: #F0F0F0;
+$master-l-10: mix(white, $master-grey, 10%);
+$master-d-10: mix(black, $master-grey, 10%);
+$master-d-15: mix(black, $master-grey, 15%);
+$grey1: #949494;
+$grey2: #767676;
+$grey3: #595959;
