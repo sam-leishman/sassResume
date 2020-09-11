@@ -1,36 +1,49 @@
 body {
   margin: 0;
-  font-family: Helvetica;
+  font-family: Helvetica, arial, sans-serif;
   color: white;
 }
 
-h1 {
+.background {
+  z-index: -1000;
+  background-color: #F0F0F0;
+}
+.background .background1 {
+  height: 300px;
+}
+
+header {
+  max-height: 200px;
+  background-color: #2897EB;
+  border-bottom: 10px solid #005A9E;
+  max-width: 850px;
+  margin: 0 auto;
+}
+header .header {
+  padding: 3% 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+header .my-name h1 {
+  font-size: 50px;
+}
+
+main {
+  max-width: 850px;
+  margin: 0 auto;
+}
+main h1 {
   color: white;
   font-size: 40px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
 
-header {
-  height: 150px;
-  background-color: #16A4B8;
-  border-bottom: 10px solid #387B85;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3% 10%;
-}
-
-.profile-pic img {
-  height: 150px;
-  width: 150px;
-  border: 10px solid #387B85;
-  border-radius: 50%;
-}
-
 .section1 {
-  background-color: #05EB87;
-  height: 850px;
+  background-color: #EB9F29;
+  height: 800px;
   padding: 3% 10%;
 }
 

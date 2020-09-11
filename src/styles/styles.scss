@@ -1,41 +1,66 @@
-$header-height: 150px;
-$page-width: 100vw;
-$accent-color: #16A4B8;
-$main-color: #05EB87;
+@use 'colors';
+
+@mixin transform($property) {
+    -webkit-transform: $property;
+    -ms-transform: $property;
+    transform: $property;
+}
+
+$header-height: 200px;
+$page-width: 850px;
 $section-padding: 3% 10%;
+$font-stack: Helvetica, arial, sans-serif;
 
 body {
     margin: 0;
-    font-family: Helvetica;
+    font-family: $font-stack;
     color: white;
 }
 
-h1 {
+.background {
+    // @include transform(rotate(-40deg));
+    z-index: -1000;
+    background-color: colors.$master-gray;
+
+    .background1 {
+        height: 300px;
+    }
+}
+
+header {
+    max-height: $header-height;
+    background-color: colors.$accent-color;
+    border-bottom: 10px solid #005A9E;
+    max-width: $page-width;
+    margin: 0 auto;
+
+    .header {
+        padding: $section-padding;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+    }
+
+    .my-name h1 {
+        font-size: 50px;
+    }
+}
+
+main {
+    max-width: $page-width;
+    margin: 0 auto;
+
+    h1 {
         color: white;
         font-size: 40px;
         -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: black;
-}
-
-header {
-    height: $header-height;
-    background-color: $accent-color;
-    border-bottom: 10px solid #387B85;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: $section-padding;
-}
-
-.profile-pic img {
-    height: 150px;
-    width: 150px;
-    border: 10px solid #387B85;
-    border-radius: 50%;
+    }
 }
 
 .section1 {
-    background-color: $main-color;
+    background-color: colors.$primary-color;
     height: 1000px - $header-height;
     padding: $section-padding;
 }
