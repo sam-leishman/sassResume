@@ -34,9 +34,9 @@
     height: 10px;
 }
 
-$header-height: 200px;
+$header-height: 170px;
 $page-width: 850px;
-$section-padding: 3% 10%;
+$section-padding: 20px 70px;
 $font-stack: Helvetica, arial, sans-serif;
 
 body {
@@ -85,7 +85,7 @@ body {
 }
 
 header {
-    max-height: $header-height;
+    height: $header-height;
     background-color: colors.$main-color;
     border-bottom: 10px solid colors.$primary-color;
 
@@ -116,58 +116,147 @@ main {
         -webkit-text-stroke-width: 1.5px;
     -webkit-text-stroke-color: colors.$primary-color;
     }
+
+    h5 {
+        color: colors.$primary-color;
+    }
 }
 
-.contact {
-    @extend %flex-column;
-    background-color: colors.$main-color;
-    height: auto;
-    width: 150px;
-    padding: $section-padding;
-    line-height: 1.5;
-}
-
-.skills {
-    @extend %flex-column;
-    background-color: colors.$main-color;
-    height: auto;
-    width: 150px;
-    padding: $section-padding;
-    line-height: 1.5;
+.the-resume {
+    display: flex;
+    flex-direction: row;
 
     h1 {
         margin-bottom: 0;
     }
 
-    h5 {
-        margin: 20px 0 5px;
+    p {
+        font-size: 14px;
+    }
+}
+
+.sidebar {
+    @extend %flex-column;
+    height: 820px;
+
+    .contact {
+        background-color: colors.$main-color;
+        width: 150px;
+        height: 50%;
+        padding: $section-padding;
+        border-bottom: 2px solid colors.$primary-color;
+        border-right: 2px solid colors.$primary-color;
+
+        h1, h5 {
+            margin-bottom: 0;
+        }
+
+        p {
+            margin-top: 0;
+            opacity: .5;
+        }
     }
 
-    .protools-bar {
-        @extend %progress-bar;
-        background-color: lightgray;
-        width: 80%;
-        height: 10px;
+    .skills {
+        background-color: colors.$main-color;
+        width: 150px;
+        height: 50%;
+        padding: $section-padding;
+        border-right: 2px solid colors.$primary-color;
+        line-height: 1.5;
+
+        h1 {
+            margin-bottom: 0;
+        }
+
+        h5 {
+            margin: 20px 0 5px;
+        }
+
+        .protools-bar {
+            @extend %progress-bar;
+            background-color: lightgray;
+            width: 80%;
+            height: 10px;
+        }
+
+        .illustrator-bar {
+            @extend %progress-bar;
+            background-color: lightgray;
+            width: 60%;
+            height: 10px;
+        }
+
+        .premiere-bar {
+            @extend %progress-bar;
+            background-color: lightgray;
+            width: 50%;
+            height: 10px;
+        }
+
+        .html-bar {
+            @extend %progress-bar;
+            background-color: lightgray;
+            width: 70%;
+            height: 10px;
+        }
+    }
+}
+
+.rest-resume {
+    @extend %flex-column;
+    height: 820px;
+    width: $page-width - 292px;
+
+    .profile {
+        background-color: colors.$main-color;
+        height: 15%;
+        padding: $section-padding;
+        line-height: 1.5;
     }
 
-    .illustrator-bar {
-        @extend %progress-bar;
-        background-color: lightgray;
-        width: 60%;
-        height: 10px;
+    .social {
+        background-color: colors.$main-color;
+        height: 20%;
+        padding: $section-padding;
+        line-height: 1.5;
     }
 
-    .premiere-bar {
-        @extend %progress-bar;
-        background-color: lightgray;
-        width: 50%;
-        height: 10px;
+    .education {
+        background-color: colors.$main-color;
+        height: 30%;
+        padding: $section-padding;
+        line-height: 1.5;
+
+        .school {
+            display: flex;
+            align-items: center;
+
+            .school-years {
+                opacity: .5;
+                margin-left: auto;
+            }
+
+            h5 {
+                margin-right: 15px;
+            }
+        }
     }
 
-    .html-bar {
-        @extend %progress-bar;
-        background-color: lightgray;
-        width: 70%;
-        height: 10px;
+    .experience {
+        background-color: colors.$main-color;
+        height: 35%;
+        padding: $section-padding;
+        line-height: 1.5;
+
+        .job-experience {
+            display: flex;
+            align-items: center;
+
+            .job-years {
+                opacity: .5;
+                margin-left: auto;
+            }
+        }
     }
 }
